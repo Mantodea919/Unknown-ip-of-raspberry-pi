@@ -4,8 +4,8 @@ llocal_ip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '(
 echo $local_ip
 sequence=$(echo $llocal_ip | cut -d '.' -f 5)
 
-echo $sequence
-echo $last_sequence
+echo "192.168.$sequence.$last_sequence"
+echo "assuming ip starts 192.168"
 # Set up GPIO pin
 GPIO=17
 echo $GPIO > /sys/class/gpio/export
