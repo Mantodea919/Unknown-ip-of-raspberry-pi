@@ -6,4 +6,7 @@ If you are using raspberry pi zero ( not wireless) connected to your phone tethe
 Script blinks as many times as in 3rd sequence of IP (192.168.XYZ.ABC), sleeps and blinks again the last sequence of IP. 
 Now you can connect to your raspberry pi via ssh  tethering.
 
+
+192.168.[amount of blinks](script sleeps) . [amount  of blinks]
+
 Use: ```bash led_ip.sh```
