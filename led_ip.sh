@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 last_sequence=$(ifconfig | grep 192.168. | cut -d "." -f 4 | cut  -d " " -f 1)
-llocal_ip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){2}[0-9]*')
+local_ip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){2}[0-9]*')
 echo $local_ip
 sequence=$(echo $llocal_ip | cut -d '.' -f 5)
 
@@ -16,9 +16,7 @@ echo "out" > /sys/class/gpio/gpio$GPIO/direction
 for ((i=0;i<$sequence;i++))
 do
   echo "1" > /sys/class/gpio/gpio$GPIO/value
-  echo "on"
   sleep 0.5
-  echo "off"
   echo "0" > /sys/class/gpio/gpio$GPIO/value
   sleep 0.5
 done
