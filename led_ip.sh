@@ -2,7 +2,7 @@
 last_sequence=$(ifconfig | grep 192.168. | cut -d "." -f 4 | cut  -d " " -f 1)
 local_ip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){2}[0-9]*')
 echo $local_ip
-sequence=$(echo $llocal_ip | cut -d '.' -f 5)
+sequence=$(echo $local_ip | cut -d '.' -f 5)
 
 echo "192.168.$sequence.$last_sequence"
 echo "assuming ip starts 192.168"
