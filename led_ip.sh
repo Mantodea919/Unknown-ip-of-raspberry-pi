@@ -13,7 +13,7 @@ echo "out" > /sys/class/gpio/gpio$GPIO/direction
 
 
 # Blink the LED
-for ((i=0;i<$sequence;i++))
+for ((i=0; i -lt $sequence;i++))
 do
   echo "1" > /sys/class/gpio/gpio$GPIO/value
   sleep 0.5
@@ -21,7 +21,7 @@ do
   sleep 0.5
 done
 sleep 10
-for ((i=0;i<$last_sequence;i++))
+for ((i=0; i -lt $last_sequence;i++))
 do
   echo "1" > /sys/class/gpio/gpio$GPIO/value
   sleep 0.5
